@@ -1,0 +1,214 @@
+/* --- CSS Variables & Theme Configuration --- */
+:root {
+  --bg-color: #121214;
+  --surface-color: #1a1a1e;
+  --border-color: #2e2e38;
+  --text-main: #f4f4f6;
+  --text-muted: #9ca3af;
+
+  --accent-primary: #6366f1;
+  --accent-hover: #4f46e5;
+
+  /* Modern Dark Palette for Elements */
+  --color-red: #ba446a;
+  --color-yellow: #f6fa91;
+  --color-blue: #0766c2;
+  --color-mini: #a855f7;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --transition-smooth: all 0.2s ease-in-out;
+}
+
+/* --- Base Styles --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 640px;
+}
+
+.app-header h1 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.app-header i {
+  color: var(--accent-primary);
+}
+
+/* --- Buttons --- */
+.btn-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background-color: var(--surface-color);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn i {
+  color: var(--text-muted);
+  transition: var(--transition-smooth);
+}
+
+.btn:hover {
+  background-color: var(--border-color);
+  border-color: var(--text-muted);
+}
+
+.btn:hover i {
+  color: var(--text-main);
+}
+
+.btn-primary {
+  background-color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: #ffffff;
+}
+
+.btn-primary i {
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.lg-radius {
+  border-radius: 5px;
+}
+
+.blue {
+  background-color: var(--color-blue);
+}
+
+.yellow {
+  background-color: var(--color-yellow);
+  border: 1px solid var(--color-yellow);
+}
+
+.red {
+  background-color: var(--color-red);
+}
+
+.blue-border {
+  border: 2px dashed var(--color-blue);
+}
+
+.yellow-border {
+  border: 2px dashed var(--color-yellow);
+}
+
+.red-border {
+  border: 2px dashed var(--color-red);
+}
+
+.mini-box {
+  height: 12px;
+  width: 12px;
+  background-color: var(--color-mini);
+  border-radius: 3px;
+}
+
+/* --- App Stage Container --- */
+#app {
+  width: 100%;
+  max-width: 600px;
+  min-height: 280px; /* Increased height to give breathing room */
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.con {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Space out rows cleanly */
+}
+
+/* Row wrapper for each starting-to-ending lane */
+.animation-row {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  min-height: 60px;
+}
+
+.final-state {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transform: translate(510px, 0px);
+}
+
+/* --- Elements --- */
+.ball {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative; /* Allows transform translation safely */
+}
+
+/* Target ghost markers */
+.target-state {
+  position: absolute;
+  left: 0;
+  opacity: 0.35;
+  /* border: 2px dashed currentColor !important; */
+  background-color: transparent !important;
+  pointer-events: none;
+}

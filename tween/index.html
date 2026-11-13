@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JsAnimation Test</title>
+    <link rel="stylesheet" href="../style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="./index.js" type="module" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="app-header">
+        <h1>
+          <i class="fa-solid fa-wand-magic-sparkles"></i> JSAnimation Studio
+        </h1>
+      </header>
+
+      <!-- Control Buttons -->
+      <div class="btn-wrapper">
+        <button class="btn btn-primary" id="btn-play">
+          <i class="fa-solid fa-play"></i> Play
+        </button>
+        <button class="btn" id="btn-reverse">
+          <i class="fa-solid fa-rotate-left"></i> Reverse
+        </button>
+        <button class="btn" id="btn-pause">
+          <i class="fa-solid fa-pause"></i> Pause
+        </button>
+        <button class="btn" id="btn-resume">
+          <i class="fa-solid fa-forward"></i> Resume
+        </button>
+        <button class="btn" id="btn-seek">
+          <i class="fa-solid fa-sliders"></i> Seek
+        </button>
+      </div>
+
+      <!-- Stage / App Area -->
+      <div id="app">
+        <div class="con">
+          <!-- Row 1: Blue Circle Lane -->
+          <div class="animation-row">
+            <div class="ball circle blue" id="opacity-ball"></div>
+            <div
+              class="ball circle blue-border target-state"
+              style="transform: translate(510px, 0px)"
+            ></div>
+          </div>
+
+          <!-- Row 2: Yellow Box Lane -->
+          <div class="animation-row">
+            <div class="ball lg-radius yellow" id="opacity-ball"></div>
+            <div
+              class="ball lg-radius yellow-border target-state"
+              style="transform: translate(510px, 0px)"
+            ></div>
+          </div>
+
+          <!-- Row 3: Red Rotated Box Lane -->
+          <div class="animation-row">
+            <div class="ball red" id="opacity-ball"></div>
+            <div
+              class="ball red-border target-state"
+              style="transform: translate(510px, 0px) rotate(45deg)"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
