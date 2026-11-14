@@ -6,39 +6,32 @@ const play = document.getElementById("btn-play");
 const resume = document.getElementById("btn-resume");
 const seek = document.getElementById("btn-seek");
 
-let t = animate(".blue", {
-  x: 510,
-  duration: 1500,
-});
+const colors = [
+  { color: ".blue" },
+  { color: ".yellow", delay: 500, scale: 0.7 },
+  { color: ".red", rotate: 45 },
+];
 
-animate(".yellow", {
-  x: 510,
-  duration: 1500,
-});
-
-animate(".red", {
-  x: 510,
-  rotate: 45,
-  duration: 1500,
-});
+const animates = colors.map((color) =>
+  animate(color.color, { duration: 1500, x: 510, ...color }),
+);
 
 pause.onclick = () => {
-  t.pause();
+  animates.forEach((a) => a.pause());
 };
 
 reverse.onclick = () => {
-  console.log("----------------------------");
-  t.reverse();
+  animates.forEach((a) => a.reverse());
 };
 
 play.onclick = () => {
-  t.play();
+  animates.forEach((a) => a.play());
 };
 
 resume.onclick = () => {
-  t.resume();
+  animates.forEach((a) => a.resume());
 };
 
 seek.onclick = () => {
-  t.seek(750);
+  animates.forEach((a) => a.seek(750));
 };

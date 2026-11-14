@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JsAnimation Test</title>
+    <title>JSAnimation Test</title>
     <link rel="stylesheet" href="../style/style.css" />
     <link
       rel="stylesheet"
@@ -21,7 +21,7 @@
 
       <!-- Control Buttons -->
       <div class="btn-wrapper">
-        <button class="btn btn-primary" id="btn-play">
+        <button class="btn" id="btn-play">
           <i class="fa-solid fa-play"></i> Play
         </button>
         <button class="btn" id="btn-reverse">
@@ -38,33 +38,43 @@
         </button>
       </div>
 
-      <!-- Stage / App Area -->
       <div id="app">
         <div class="con">
-          <!-- Row 1: Blue Circle Lane -->
           <div class="animation-row">
             <div class="ball circle blue" id="opacity-ball"></div>
             <div
               class="ball circle blue-border target-state"
               style="transform: translate(510px, 0px)"
             ></div>
+
+            <div
+              class="ball circle blue-border target-state"
+              style="transform: translate(0px, 0px)"
+            ></div>
           </div>
 
-          <!-- Row 2: Yellow Box Lane -->
           <div class="animation-row">
             <div class="ball lg-radius yellow" id="opacity-ball"></div>
             <div
               class="ball lg-radius yellow-border target-state"
-              style="transform: translate(510px, 0px)"
+              style="transform: translate(510px, 0px) scale(0.7)"
+            ></div>
+
+            <div
+              class="ball yellow-border target-state"
+              style="transform: translate(0px, 0px)"
             ></div>
           </div>
 
-          <!-- Row 3: Red Rotated Box Lane -->
           <div class="animation-row">
             <div class="ball red" id="opacity-ball"></div>
             <div
               class="ball red-border target-state"
               style="transform: translate(510px, 0px) rotate(45deg)"
+            ></div>
+            <div
+              class="ball red-border target-state"
+              style="transform: translate(0px, 0px) rotate(0)"
             ></div>
           </div>
         </div>
